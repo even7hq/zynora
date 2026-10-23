@@ -1,5 +1,16 @@
 import { defineConfig } from "vitepress";
 
+// esbuild >= 0.27.7 will not lower destructuring for Safari 14.0 (broken JSC,
+// and esbuild has no destructuring transform). Vite 5 still defaults to
+// safari14, so `vitepress build` fails while esbuild stays pinned at 0.28.2.
+const docsBuildTarget = [
+    "es2020",
+    "edge88",
+    "firefox78",
+    "chrome87",
+    "safari14.1"
+];
+
 export default defineConfig({
     title: "Zynora",
     description: "Complete icon toolkit with SVG, font, and CSS support, built for modern design systems and developer workflows.",
@@ -7,6 +18,18 @@ export default defineConfig({
     // VitePress uses `git` for timestamps; Docker/Dokploy often has no git binary or no `.git` in context.
     lastUpdated: process.env.ZYNORA_DOCS_NO_GIT === "1" ? false : true,
     cleanUrls: true,
+
+    vite: {
+        build: {
+            target: docsBuildTarget
+        },
+
+        optimizeDeps: {
+            esbuildOptions: {
+                target: docsBuildTarget
+            }
+        }
+    },
 
     themeConfig: {
         nav: [
