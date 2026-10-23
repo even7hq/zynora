@@ -1,6 +1,6 @@
 {
   "name": "zynora",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Icon font toolkit by the Even7 team - folder-based SVG/PNG, Vite integration, and auto-generated docs.",
   "license": "MIT",
   "private": true,
