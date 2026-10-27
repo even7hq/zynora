@@ -23,7 +23,7 @@ ENV ZYNORA_DOCS_NO_GIT=1
 RUN yarn doc:build
 
 # Serve static output
-FROM nginx:alpine AS runtime
+FROM nginx:1.31.8-alpine AS runtime
 
 RUN apk add --no-cache wget
 
