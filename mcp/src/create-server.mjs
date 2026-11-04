@@ -5,7 +5,7 @@ import { filterIcons, getPayload } from "./icons-catalog.mjs";
 
 const QUICKSTART_MARKDOWN = `# Zynora quick reference (for assistants)
 
-Official docs: https://zynora.even7.dev/
+Official docs: https://zynora.svs.e7.dev/
 
 ## HTML
 

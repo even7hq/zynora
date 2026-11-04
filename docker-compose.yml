@@ -4,7 +4,20 @@ services:
             context: .
             dockerfile: Dockerfile
         image: zynora-docs:latest
+        container_name: zynora-docs
         restart: unless-stopped
+        # zynora.svs.e7.dev is the private NetBird name. TLS ends on that proxy.
+        # The proxy sends HTTP here with the same Host, so this route stays on web.
+        labels:
+            - traefik.docker.network=dokploy-network
+            - traefik.http.routers.zynora-docs.rule=Host(`zynora.svs.e7.dev`)
+            - traefik.http.routers.zynora-docs.entrypoints=web
+            - traefik.http.services.zynora-docs.loadbalancer.server.port=80
+            - traefik.http.routers.zynora-docs.service=zynora-docs
+            - traefik.enable=true
+        networks:
+            - dokploy-network
+            - default
 
     zynora-mcp:
         build:
@@ -13,7 +26,11 @@ services:
         image: zynora-mcp:latest
         environment:
             ZYNORA_MCP_HOST: 0.0.0.0
-            ZYNORA_ICONS_URL: ${ZYNORA_ICONS_URL:-https://zynora.even7.dev/zynora-icons.json}
+            ZYNORA_ICONS_URL: ${ZYNORA_ICONS_URL:-https://zynora.svs.e7.dev/zynora-icons.json}
         restart: unless-stopped
         profiles:
             - mcp
+
+networks:
+    dokploy-network:
+        external: true

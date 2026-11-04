@@ -14,7 +14,7 @@ COPY mcp/src ./src
 
 ENV NODE_ENV=production
 ENV ZYNORA_MCP_HOST=0.0.0.0
-ENV ZYNORA_ICONS_URL=https://zynora.even7.dev/zynora-icons.json
+ENV ZYNORA_ICONS_URL=https://zynora.svs.e7.dev/zynora-icons.json
 
 EXPOSE 3333
 

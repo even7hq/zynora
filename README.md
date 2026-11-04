@@ -6,11 +6,11 @@ By the [Even7](https://even7.com.br) team. **MIT.**
 
 ## Documentation
 
-**[zynora.even7.dev](https://zynora.even7.dev/)** - install, folder layout, gallery, [MCP for assistants](https://zynora.even7.dev/guide/mcp-for-ai).
+**[zynora.svs.e7.dev](https://zynora.svs.e7.dev/)** - install, folder layout, gallery, [MCP for assistants](https://zynora.svs.e7.dev/guide/mcp-for-ai). The name only answers on the NetBird intranet.
 
 ## Quick start
 
-Add **zynora** to your Vite app (workspace link, local path, or your registry - see [Installation & usage](https://zynora.even7.dev/guide/installation-and-usage)).
+Add **zynora** to your Vite app (workspace link, local path, or your registry - see [Installation & usage](https://zynora.svs.e7.dev/guide/installation-and-usage)).
 
 ```ts
 // vite.config.ts

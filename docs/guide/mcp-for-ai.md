@@ -96,7 +96,7 @@ Same tools over **HTTP** for clients that support remote MCP.
 2. In your MCP client, **add an HTTP / remote MCP server** (name varies: “Streamable HTTP”, “URL”, “Remote”, etc.) and paste that URL.
 3. Save, reload MCP, open a chat, and ask a Zynora question as in [How to use it](#how-to-use).
 
-**Example target:** `https://zynora.even7.dev/mcp` - only works **after** that HTTP endpoint is deployed behind your docs domain; the static VitePress site alone does not serve MCP.
+**Example target:** `https://zynora.svs.e7.dev/mcp` - only works **after** that HTTP endpoint is deployed behind your docs domain; the static VitePress site alone does not serve MCP.
 
 If your client **only** supports **command + args** (stdio), you cannot use a raw HTTPS URL there - use [Local (stdio)](#local-stdio) instead.
 
@@ -147,7 +147,7 @@ The MCP surface is **read-only** (icon metadata + docs text) but still reachable
 | --- | --- |
 | `ZYNORA_PACKAGE_ROOT` | Absolute path to the **zynora** package (parent of `mcp/`). Defaults to the parent of `mcp/` when running from this repo. |
 | `ZYNORA_ICONS_JSON` | Absolute path to a catalog JSON file (`{ "icons": [ ... ] }`). Overrides local file discovery. |
-| `ZYNORA_ICONS_URL` | URL for the catalog JSON. Default: `https://zynora.even7.dev/zynora-icons.json`. |
+| `ZYNORA_ICONS_URL` | URL for the catalog JSON. Default: `https://zynora.svs.e7.dev/zynora-icons.json`. |
 
 ### HTTP only
 
@@ -168,7 +168,7 @@ The MCP surface is **read-only** (icon metadata + docs text) but still reachable
 `yarn doc:data` writes:
 
 - `docs/.vitepress/data/icons.json` - VitePress gallery
-- `docs/public/zynora-icons.json` - site root after build, e.g. [https://zynora.even7.dev/zynora-icons.json](https://zynora.even7.dev/zynora-icons.json)
+- `docs/public/zynora-icons.json` - site root after build, e.g. [https://zynora.svs.e7.dev/zynora-icons.json](https://zynora.svs.e7.dev/zynora-icons.json)
 
 Rebuild and redeploy docs when icons change.
 

@@ -1,0 +1,24 @@
+# O Atlantis publica o site na máquina do Dokploy. O Dokploy não faz esse deploy.
+# O apply roda quando a master muda o Terraform ou o conteúdo que entra na imagem.
+version: 3
+automerge: false
+projects:
+  - name: docs
+    dir: .infra
+    terraform_version: v1.17.0
+    workflow: even7-autoapply
+    autoplan:
+      when_modified:
+        - "**/*.tf"
+        - "../docker-compose.yml"
+        - "../Dockerfile"
+        - "../package.json"
+        - "../yarn.lock"
+        - "../nayr.lock"
+        - "../deploy/**"
+        - "../docs/**"
+        - "../icons/**"
+        - "../lib/**"
+        - "../scripts/**"
+        - "../src/**"
+        - "../tsconfig.lemon-plugin.json"

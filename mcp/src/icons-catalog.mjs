@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const MCP_ROOT = path.join(__dirname, "..");
-const DEFAULT_ICONS_URL = "https://zynora.even7.dev/zynora-icons.json";
+const DEFAULT_ICONS_URL = "https://zynora.svs.e7.dev/zynora-icons.json";
 
 /**
  * Resolves absolute path to the zynora package root (parent of \`mcp/\`).
