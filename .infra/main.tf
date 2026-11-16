@@ -1,10 +1,10 @@
-# The shared module lives on the Atlantis VM and publishes this repo on the host below.
+# The shared module lives on the Forgejo VM and publishes this repo on the host below.
 # docker-compose.yml stays at the repo root. Dokploy does not deploy this repo.
 # Today the host is the VM where Dokploy is installed.
 # The Dokploy container name is removed after the image build, before the new one starts.
 
 module "docs" {
-  source = "/opt/atlantis/compose-ssh"
+  source = "/opt/forgejo/compose-ssh"
 
   source_patterns = [
     "Dockerfile",
