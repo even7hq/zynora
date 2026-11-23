@@ -22,7 +22,7 @@ module "docs" {
   ]
 
   ssh_host        = "100.89.216.29"
-  ssh_identity    = "/etc/atlantis/dokploy-deploy"
+  ssh_identity    = "/etc/forgejo-runner/dokploy-deploy"
   remote_dir      = "/home/ubuntu/even7/zynora"
   compose_project = "zynora-docs"
   old_container   = "zynora-640lwe-zynora-docs-1"
